@@ -19,10 +19,9 @@ public class Main {
             int numRequests = 5;
             SynchronizedClock clock;
             if (useCurrentTimeToStart) {
-                 clock = new SynchronizedClock(context, serverHost, numRequests, 0);
+                 clock = new SynchronizedClock(context, serverHost, numRequests, System.currentTimeMillis());
             } else {
                 clock = new SynchronizedClock(context, serverHost, numRequests);
-                clock.startSynchronization();
             }
             System.out.println("Synchronisierte Zeit: " + time(clock.getTime()));
             System.out.println("Aktueller Offset zur lokalen Zeit: " + clock.getOffset() + " ms");

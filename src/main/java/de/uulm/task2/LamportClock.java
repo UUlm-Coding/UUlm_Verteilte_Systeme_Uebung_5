@@ -1,52 +1,47 @@
 package de.uulm.task2;
 
 public class LamportClock implements Comparable<LamportClock>{
-        // TODO
+
+    private long time;
 
     public LamportClock() {
-        // TODO
+        this.time = 0;
     }
 
     public LamportClock(long init) {
-        // TODO
+        this.time = init;
     }
 
     public long getTime() {
-        // TODO
-        return 0;
+        return this.time;
     }
 
     /**
     * Also returns incremented time.
     */
     public long increment() {
-        // TODO
-        return 0;
+        return ++this.time;
     }
 
     public long merge(LamportClock b) {
-        // TODO
-        return 0;
+        this.time = Math.max(this.time, b.getTime()) + 1;
+        return this.time;
     }
 
     public static LamportClock merge(LamportClock a, LamportClock b) {
-        // TODO
-        return null;
+        return new LamportClock(Math.max(a.getTime(), b.getTime()) + 1);
     }
 
     public static int compare(LamportClock a, LamportClock b) {
-        // TODO
-        return 0;
+        return Long.compare(a.getTime(), b.getTime());
     }
 
     public boolean equals(LamportClock b) {
-        // TODO
-        return false;
+        return this.time == b.getTime();
     }
 
     @Override
     public int compareTo(LamportClock l) {
-        // TODO
-        return 0;
+        return Long.compare(this.time, l.getTime());
     }
 }

@@ -24,10 +24,7 @@ public class SynchronizedClock implements Clock {
     private long currentTime;
 
     public SynchronizedClock(ZContext context, String host, int numRequests) {
-        this.context = context;
-        this.host = host;
-        this.numRequests = numRequests;
-        this.currentTime = System.currentTimeMillis();
+        this(context, host, numRequests, 0);
     }
 
     public SynchronizedClock(ZContext context, String host, int numRequests, long start) {
