@@ -1,4 +1,4 @@
-package uulm.in.vs.ex5.task2;
+package task2;
 
 import de.uulm.task2.LamportClock;
 import org.junit.jupiter.api.Test;
@@ -9,8 +9,8 @@ class LamportTest {
 
     @Test
     void getTime() {
-        LamportClock a,b;
-        a = new LamportClock();
+        LamportClock b;
+        LamportClock a = new LamportClock();
         b = new LamportClock(12);
 
         assertEquals(0, a.getTime());

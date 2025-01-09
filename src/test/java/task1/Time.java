@@ -1,4 +1,4 @@
-package uulm.in.vs.ex5.task1;
+package task1;
 
 import de.uulm.task1.Clock;
 import de.uulm.task1.SynchronizedClock;
@@ -16,10 +16,11 @@ public class Time {
      */
     public static void main(String[] args) {
         ZContext context = new ZContext();
-        String host = "tcp://vs.lxd-vs.uni-ulm.de:3322";
+        String host = "vs.lxd-vs.uni-ulm.de:3322";
 
         // Clock that synchronizes at the start
-        Clock initial = new SynchronizedClock(context, host, 5);
+        Clock initial;
+        initial = new SynchronizedClock(context, host, 5);
 
         // Clock with initial time
         Clock wrong = new SynchronizedClock(context, host, 5, initial.getTime()+2000);

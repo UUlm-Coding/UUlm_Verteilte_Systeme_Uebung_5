@@ -1,4 +1,4 @@
-package uulm.in.vs.ex5.task2;
+package task2;
 
 import de.uulm.task2.VectorClock;
 
