@@ -19,7 +19,7 @@ public class Main {
             int numRequests = 5;
             SynchronizedClock clock;
             if (useCurrentTimeToStart) {
-                 clock = new SynchronizedClock(context, serverHost, numRequests, System.currentTimeMillis());
+                 clock = new SynchronizedClock(context, serverHost, numRequests, 0);
             } else {
                 clock = new SynchronizedClock(context, serverHost, numRequests);
                 clock.startSynchronization();
